@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talks — Stefano Coniglio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="talks.html" aria-current="page">Talks</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="photo-wrap">
+        <div class="photo-placeholder" aria-hidden="true">photo</div>
+      </div>
+      <h1 class="name">Stefano Coniglio</h1>
+      <p class="title">
+        [Associate / Full] Professor of Computer Science<br>
+        University of Bergamo
+      </p>
+      <ul class="contact">
+        <li>Bergamo, Italy</li>
+        <li><a href="mailto:[your-email]@unibg.it">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=[ID]">Google Scholar</a></li>
+        <li><a href="https://orcid.org/[ORCID-ID]">ORCID</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>Talks</h2>
+
+      <h2 class="section-label">Invited / plenary</h2>
+      <ul class="news">
+        <li>
+          <span class="date">[Month Year]</span>
+          [Talk title], <em>[Venue]</em>, [Location].
+          &nbsp;<a href="#">Slides</a>
+        </li>
+        <li>
+          <span class="date">[Month Year]</span>
+          [Talk title], <em>[Venue]</em>, [Location].
+        </li>
+      </ul>
+
+      <h2 class="section-label">Contributed</h2>
+      <ul class="news">
+        <li>
+          <span class="date">[Month Year]</span>
+          [Talk title], <em>[Conference]</em>, [Location].
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Stefano Coniglio</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
