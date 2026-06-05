@@ -154,7 +154,8 @@ strong { font-weight: 600; }
 }
 .content > h2.section-label:first-child,
 .content > p + h2.section-label,
-.content > p:first-child + h2.section-label {
+.content > p:first-child + h2.section-label,
+.content > ul.news + h2.section-label {
   margin-top: 16px;
 }
 .content p {
