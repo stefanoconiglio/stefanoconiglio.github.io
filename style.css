@@ -200,28 +200,96 @@ footer {
 }
 footer p { margin: 0; }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 760px) {
+/* ---------- Narrow / mobile ---------- */
+@media (max-width: 860px) {
   html { font-size: 16px; }
   .topnav { padding: 14px 20px; }
-  .topnav ul { justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .topnav ul {
+    justify-content: center;
+    gap: 12px 20px;
+    flex-wrap: wrap;
+  }
   .layout {
     grid-template-columns: 1fr;
-    gap: 36px;
-    margin: 32px auto 64px;
-    padding: 0 20px;
+    gap: 28px;
+    max-width: 760px;
+    margin: 28px auto 56px;
+    padding: 0 24px;
   }
   .sidebar {
     position: static;
     display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 18px;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 0 22px;
     align-items: start;
   }
-  .photo-wrap { width: 100px; margin-bottom: 0; }
-  .sidebar > h1, .sidebar > .title, .sidebar > .contact {
-    grid-column: 2;
+  .photo-wrap {
+    width: 120px;
+    margin: 0;
   }
-  .news li { grid-template-columns: 90px 1fr; gap: 14px; }
-  footer { padding: 20px; }
+  .sidebar-meta {
+    min-width: 0;
+    padding-top: 2px;
+  }
+  .sidebar .name {
+    margin-bottom: 5px;
+  }
+  .sidebar .title {
+    margin-bottom: 10px;
+    font-size: 0.90rem;
+    line-height: 1.4;
+  }
+  .sidebar .contact {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 0;
+    font-size: 0.78rem;
+    line-height: 1.65;
+  }
+  .sidebar .contact li { margin: 0; }
+  .sidebar .contact .location {
+    flex-basis: 100%;
+    margin-bottom: 2px;
+  }
+  .news li {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 14px;
+  }
+  footer {
+    max-width: 760px;
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .topnav ul {
+    gap: 10px 16px;
+    font-size: 0.78rem;
+  }
+  .layout {
+    margin-top: 22px;
+    padding: 0 18px;
+  }
+  .sidebar {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 0 16px;
+  }
+  .photo-wrap { width: 88px; }
+  .sidebar .name { font-size: 1.08rem; }
+  .sidebar .title {
+    margin-bottom: 8px;
+    font-size: 0.84rem;
+  }
+  .sidebar .contact {
+    column-gap: 12px;
+    font-size: 0.74rem;
+  }
+  .news li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 9px 0;
+  }
+  .news .date { padding-top: 0; }
+  footer { padding: 18px; }
 }
