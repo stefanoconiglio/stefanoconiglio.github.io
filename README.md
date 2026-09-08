@@ -4,7 +4,7 @@ Hand-coded HTML/CSS site modelled on the structure of Ivana Ljubić's page
 (https://ivanaljubic.github.io/) but with restrained typography (Source Serif 4
 + IBM Plex Mono) instead of the AcademicPages defaults.
 
-No build step. No Jekyll. Edit the HTML directly.
+GitHub Pages builds the site with Jekyll. Shared fragments such as the sidebar live in `_includes/`; the browser still receives ordinary static HTML.
 
 ## Files
 
@@ -13,6 +13,7 @@ No build step. No Jekyll. Edit the HTML directly.
 - `talks.html` — stub list, fill in
 - `projects.html` — stubs for HEXAGON, AI4SF, etc.
 - `style.css` — shared stylesheet for all pages
+- `_includes/sidebar.html` — shared profile/sidebar included in every page via Jekyll/Liquid
 
 ## Deploy
 
@@ -65,3 +66,8 @@ All marked with `[BRACKETED PLACEHOLDERS]` in the HTML:
   generate `publications.html` from a script you run locally.
 - **News feed from Obsidian/Quartz:** point a "Notes" link in the sidebar at
   your Quartz site rather than duplicating content here.
+
+
+## Local preview
+
+GitHub Pages expands the Liquid includes automatically. To preview the fully rendered site locally, run a local Jekyll server; opening a source `.html` file directly from disk will not expand `{% include ... %}` tags.
