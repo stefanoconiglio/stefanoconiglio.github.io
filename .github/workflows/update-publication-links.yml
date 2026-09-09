@@ -14,37 +14,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 3
-      - name: Run updater
+      - name: Run publication updater
         shell: bash
         run: |
-          set +e
-          git show HEAD^^:.github/workflows/update-publication-links.yml > /tmp/old.yml
+          git show ba9b6d00ef7b163575b4588f6a5e74a0a9320d80:.github/workflows/update-publication-links.yml > /tmp/original.yml
           python - <<'PY'
           from pathlib import Path
-          text = Path('/tmp/old.yml').read_text()
+          text = Path('/tmp/original.yml').read_text()
           start = text.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
           end = text.index("\n          PY\n\n      - name: Commit publication links", start)
           lines = text[start:end].splitlines()
           code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          old = "for i, line in enumerate(lines):\n    for label, links in cv_links.items():"
+          new = "for i, line in enumerate(lines):\n    if line.lstrip().startswith('%'):\n        continue\n    for label, links in cv_links.items():"
+          if old not in code:
+              raise RuntimeError('could not patch commented CV entries')
+          code = code.replace(old, new, 1)
           Path('/tmp/update_publications.py').write_text(code)
           PY
-          python /tmp/update_publications.py > /tmp/update.log 2>&1
-          status=$?
-          if [ "$status" -ne 0 ]; then
-            cat /tmp/update.log
-            cp /tmp/update.log update-publication-links-error.txt
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add update-publication-links-error.txt
-            git commit -m "Record publication-link update error"
-            git push
-            exit "$status"
-          fi
-          rm .github/workflows/update-publication-links.yml
+          python /tmp/update_publications.py
+          rm -f .github/workflows/update-publication-links.yml update-publication-links-error.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add publications.html cv/sections/publications.tex .github/workflows/update-publication-links.yml
+          git add publications.html cv/sections/publications.tex .github/workflows/update-publication-links.yml update-publication-links-error.txt
           git commit -m "Add verified links to publications"
           git push
