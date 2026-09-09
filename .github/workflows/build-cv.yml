@@ -39,3 +39,5 @@ jobs:
           fi
           git commit -m "Rebuild CV PDF"
           git push
+
+# Publication-link audit trigger: 2026-09-09
