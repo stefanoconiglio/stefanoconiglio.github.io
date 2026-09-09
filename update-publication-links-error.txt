@@ -1,4 +1,1 @@
-Traceback (most recent call last):
-  File "/tmp/update_publications.py", line 397, in <module>
-    raise RuntimeError(f"duplicate CV label: {label}")
-RuntimeError: duplicate CV label: J1
+python: can't open file '/tmp/update_publications.py': [Errno 2] No such file or directory
