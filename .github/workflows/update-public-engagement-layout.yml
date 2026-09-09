@@ -21,20 +21,23 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
 
           path = Path('engagement.html')
           text = path.read_text(encoding='utf-8')
 
-          pattern = re.compile(
-              r'(      <h2 class="section-label">Written contributions</h2>\n      <ul class="news">.*?      </ul>\n\n)'
-              r'(      <h2 class="section-label">Events &amp; talks</h2>\n      <ul class="news">.*?      </ul>\n)',
-              re.S,
-          )
-          m = pattern.search(text)
-          if not m:
-              raise RuntimeError('Could not locate the two public-engagement sections')
-          text = text[:m.start()] + m.group(2) + '\n' + m.group(1) + text[m.end():]
+          written_marker = '      <h2 class="section-label">Written contributions</h2>\n'
+          events_marker = '      <h2 class="section-label">Events &amp; talks</h2>\n'
+          main_end = '    </main>\n'
+
+          w = text.index(written_marker)
+          e = text.index(events_marker)
+          m = text.index(main_end, e)
+          if not (w < e < m):
+              raise RuntimeError('Unexpected public-engagement section order')
+
+          written = text[w:e].rstrip() + '\n'
+          events = text[e:m].rstrip() + '\n'
+          text = text[:w] + events + '\n' + written + text[m:]
 
           old = '''            Three-hour training session <em>"Introduzione all'AI"</em> for teaching staff,
             Centro Scolastico La Traccia, Calcinate (BG), 3 September 2026.'''
