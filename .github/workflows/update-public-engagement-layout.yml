@@ -1,0 +1,65 @@
+name: Update public engagement layout
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-public-engagement-layout.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reorder sections and update La Traccia title
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('engagement.html')
+          text = path.read_text(encoding='utf-8')
+
+          pattern = re.compile(
+              r'(      <h2 class="section-label">Written contributions</h2>\n      <ul class="news">.*?      </ul>\n\n)'
+              r'(      <h2 class="section-label">Events &amp; talks</h2>\n      <ul class="news">.*?      </ul>\n)',
+              re.S,
+          )
+          m = pattern.search(text)
+          if not m:
+              raise RuntimeError('Could not locate the two public-engagement sections')
+          text = text[:m.start()] + m.group(2) + '\n' + m.group(1) + text[m.end():]
+
+          old = '''            Three-hour training session <em>"Introduzione all'AI"</em> for teaching staff,
+            Centro Scolastico La Traccia, Calcinate (BG), 3 September 2026.'''
+          new = '''            Three-hour training session <em>"Come l’IA ha iniziato a parlare: una sguardo storico-scientifico sull’IA moderna"</em> for teaching staff,
+            Centro Scolastico La Traccia, Calcinate (BG), 3 September 2026.'''
+          if old not in text:
+              raise RuntimeError('Could not locate the La Traccia webpage entry')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+          cv_path = Path('cv/sections/public_engagement.tex')
+          cv = cv_path.read_text(encoding='utf-8')
+          old_cv = r'''\cventry{2026}{Training session, ``Introduzione all'AI''}{Centro Scolastico La Traccia}{Calcinate (BG), 3 September 2026}{}{Three-hour training session for teaching staff}'''
+          new_cv = r'''\cventry{2026}{Training session, ``Come l’IA ha iniziato a parlare: una sguardo storico-scientifico sull’IA moderna''}{Centro Scolastico La Traccia}{Calcinate (BG), 3 September 2026}{}{Three-hour training session for teaching staff}'''
+          if old_cv not in cv:
+              raise RuntimeError('Could not locate the La Traccia CV entry')
+          cv = cv.replace(old_cv, new_cv, 1)
+          cv_path.write_text(cv, encoding='utf-8')
+          PY
+
+      - name: Commit changes and remove one-off workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/update-public-engagement-layout.yml
+          git add engagement.html cv/sections/public_engagement.tex
+          git commit -m "Reorder public engagement and update La Traccia title"
+          git push
