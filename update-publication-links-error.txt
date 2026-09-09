@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/tmp/update_publications.py", line 397, in <module>
+    raise RuntimeError(f"duplicate CV label: {label}")
+RuntimeError: duplicate CV label: J1
