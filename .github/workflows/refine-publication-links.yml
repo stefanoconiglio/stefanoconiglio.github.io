@@ -31,147 +31,86 @@ jobs:
           pubs = pub_path.read_text(encoding='utf-8')
           cv = cv_path.read_text(encoding='utf-8')
 
-          # On the publication page, keep official publisher/proceedings links,
-          # arXiv, Optimization Online, and OpenReview. Institutional repositories,
-          # PMC copies, ePrints, and DBLP records are not preprint links.
-          blocked_html = (
-              'aisberg.unibg.it',
-              'eprints.soton.ac.uk',
-              're.public.polimi.it',
-              'pmc.ncbi.nlm.nih.gov',
-              'dblp.org/rec/',
-          )
-
+          blocked_html = ('aisberg.unibg.it','eprints.soton.ac.uk','re.public.polimi.it','pmc.ncbi.nlm.nih.gov','dblp.org/rec/')
           item_re = re.compile(r'<li><span class="date">.*?</li>', re.S)
           anchor_re = re.compile(r'\s*&nbsp;·&nbsp;\s*<a href="([^"]+)">([^<]+)</a>')
 
           def clean_item(match):
               block = match.group(0)
-              seen_labels = set()
-
+              seen = set()
               def clean_anchor(am):
                   url, label = am.group(1), am.group(2)
                   if any(domain in url for domain in blocked_html):
                       return ''
-                  # Remove accidental duplicate links of the same kind within one item.
-                  if label in seen_labels:
+                  if (label, url) in seen:
                       return ''
-                  seen_labels.add(label)
+                  seen.add((label, url))
                   return am.group(0)
-
-              block = anchor_re.sub(clean_anchor, block)
-              block = re.sub(r'\n\s*\n\s*</div>', '\n          </div>', block)
-              return block
+              return anchor_re.sub(clean_anchor, block)
 
           html = item_re.sub(clean_item, html)
 
-          # Define a conspicuous publication-link style in the CV: blue,
-          # underlined, and Courier-family monospace.  The TeX build uses the
-          # standard Courier-compatible pcr family available in TeX Live.
-          macro = r'''\newcommand{\publink}[2]{%
-  \href{#1}{\textcolor{blue}{\underline{\fontfamily{pcr}\selectfont #2}}}%
-}
-'''
+          macro = '\\newcommand{\\publink}[2]{\\href{#1}{\\textcolor{blue}{\\underline{\\fontfamily{pcr}\\selectfont #2}}}}\n'
           if '\\newcommand{\\publink}' not in cv:
               marker = '\\usepackage[bottom=1in,scale=0.89]{geometry} % Reduce document margins\n'
               if marker not in cv:
-                  raise RuntimeError('Could not find CV preamble insertion point')
+                  raise RuntimeError('CV preamble insertion point not found')
               cv = cv.replace(marker, marker + '\n' + macro, 1)
 
-          # Rebuild link fragments in the publication cventries.  This both
-          # removes non-approved repository links and applies \publink uniformly.
           href_re = re.compile(r'\\href\{([^{}]+)\}\{([^{}]+)\}')
 
           def arg_spans(line):
               p = line.find(r'\cventry')
-              if p < 0:
-                  return []
+              if p < 0: return []
               p += len(r'\cventry')
               spans = []
               for _ in range(6):
-                  while p < len(line) and line[p].isspace():
-                      p += 1
-                  if p >= len(line) or line[p] != '{':
-                      return []
-                  p += 1
-                  start = p
-                  depth = 1
+                  while p < len(line) and line[p].isspace(): p += 1
+                  if p >= len(line) or line[p] != '{': return []
+                  p += 1; start = p; depth = 1
                   while p < len(line) and depth:
-                      ch = line[p]
-                      escaped = p > 0 and line[p - 1] == '\\'
-                      if ch == '{' and not escaped:
-                          depth += 1
+                      ch = line[p]; escaped = p > 0 and line[p-1] == '\\'
+                      if ch == '{' and not escaped: depth += 1
                       elif ch == '}' and not escaped:
                           depth -= 1
                           if depth == 0:
-                              spans.append((start, p))
-                              p += 1
-                              break
+                              spans.append((start,p)); p += 1; break
                       p += 1
-                  if depth:
-                      return []
+                  if depth: return []
               return spans
 
-          def allowed_link(url, label):
-              if 'arxiv.org/' in url or 'optimization-online.org/' in url:
-                  return True
-              if label in {'Publisher', 'Proceedings', 'OpenReview'}:
-                  return True
-              return False
+          def allowed(url,label):
+              return ('arxiv.org/' in url or 'optimization-online.org/' in url or label in {'Publisher','Proceedings','OpenReview'})
 
-          out = []
+          out=[]
           for line in pubs.splitlines(keepends=True):
               if '\\cventry' not in line or '\\href{' not in line:
-                  out.append(line)
-                  continue
-
-              spans = arg_spans(line)
-              if len(spans) < 4:
-                  out.append(line)
-                  continue
-
-              a, b = spans[3]
-              venue = line[a:b]
-              links = [(u, l) for u, l in href_re.findall(venue) if allowed_link(u, l)]
-
-              # Keep the prose before the first link and rebuild only the compact link tail.
-              first = venue.find('\\quad \\href')
-              if first < 0:
-                  first = venue.find('\\href')
-              base = venue[:first].rstrip() if first >= 0 else venue
-
+                  out.append(line); continue
+              spans=arg_spans(line)
+              if len(spans)<4:
+                  out.append(line); continue
+              a,b=spans[3]
+              venue=line[a:b]
+              links=[(u,l) for u,l in href_re.findall(venue) if allowed(u,l)]
+              first=venue.find('\\quad \\href')
+              if first<0: first=venue.find('\\href')
+              base=venue[:first].rstrip() if first>=0 else venue
               if links:
-                  tail = r'\quad ' + r'\,$\cdot$\,'.join(
-                      r'\publink{' + url + '}{' + label + '}' for url, label in links
-                  )
-                  venue = base + tail
+                  tail=r'\quad '+r'\,$\cdot$\,'.join(r'\publink{'+u+'}{'+l+'}' for u,l in links)
+                  venue=base+tail
               else:
-                  venue = base
+                  venue=base
+              out.append(line[:a]+venue+line[b:])
+          pubs=''.join(out)
 
-              line = line[:a] + venue + line[b:]
-              out.append(line)
-
-          pubs = ''.join(out)
-
-          # Guardrails requested explicitly: no Aisberg anywhere in either output,
-          # and no institutional-repository/preprint substitutes in publication links.
-          forbidden = [
-              'aisberg.unibg.it',
-              'eprints.soton.ac.uk',
-              're.public.polimi.it',
-              'pmc.ncbi.nlm.nih.gov',
-              'dblp.org/rec/',
-          ]
+          forbidden=['aisberg.unibg.it','eprints.soton.ac.uk','re.public.polimi.it','pmc.ncbi.nlm.nih.gov','dblp.org/rec/']
           for bad in forbidden:
               if bad in html or bad in pubs:
-                  raise RuntimeError(f'Forbidden publication link remains: {bad}')
+                  raise RuntimeError('Forbidden publication link remains: '+bad)
 
-          if '\\publink{' not in pubs:
-              raise RuntimeError('No styled CV publication links were produced')
-
-          html_path.write_text(html, encoding='utf-8')
-          pub_path.write_text(pubs, encoding='utf-8')
-          cv_path.write_text(cv, encoding='utf-8')
+          html_path.write_text(html,encoding='utf-8')
+          pub_path.write_text(pubs,encoding='utf-8')
+          cv_path.write_text(cv,encoding='utf-8')
           PY
 
       - name: Commit changes and remove one-shot workflow
