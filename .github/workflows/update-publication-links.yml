@@ -1,4 +1,4 @@
-name: Update publication links
+name: Apply verified publication links
 
 on:
   push:
@@ -14,39 +14,166 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run publication updater
+      - name: Update webpage and CV source
         shell: bash
         run: |
-          set +e
-          git show ba9b6d00ef7b163575b4588f6a5e74a0a9320d80:.github/workflows/update-publication-links.yml > /tmp/original.yml
           python - <<'PY'
+          import json
           from pathlib import Path
-          text = Path('/tmp/original.yml').read_text()
-          start = text.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
-          end = text.index("\n          PY\n\n      - name: Commit publication links", start)
-          lines = text[start:end].splitlines()
-          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
-          needle = "for i, line in enumerate(lines):"
-          if needle not in code:
-              raise RuntimeError('CV iteration loop not found')
-          code = code.replace(needle, needle + "\n    if line.lstrip().startswith('%'):\n        continue", 1)
-          Path('/tmp/update_publications.py').write_text(code)
+
+          hp = Path('publications.html')
+          cp = Path('cv/sections/publications.tex')
+          html = hp.read_text(encoding='utf-8')
+          cv = cp.read_text(encoding='utf-8')
+          data = json.loads(Path('publication-links-data.json').read_text(encoding='utf-8'))
+          if len(data) != 62:
+              raise RuntimeError(f'expected 62 publication records, got {len(data)}')
+
+          def once(text, old, new, name):
+              n = text.count(old)
+              if n != 1:
+                  raise RuntimeError(f'{name}: expected one match, got {n}')
+              return text.replace(old, new, 1)
+
+          # Bibliographic corrections established while checking publisher/proceedings records.
+          html = once(html, 'https://openreview.net/forum?id=ghk8lnOYRq', 'https://openreview.net/forum?id=VJAqqtVXfD', 'P30 OpenReview')
+          html = once(html, '<strong>Sheaves Reloaded: A Directional Awakening</strong>', '<strong>Sheaves Reloaded: A Direction Awakening</strong>', 'P28 title')
+          html = once(html, '<strong>A Unified Framework for Multistage Discrete Optimization</strong><br>\n            S. Coniglio, T. Ralphs<br>', '<strong>A Unified Framework for Multistage Mixed Integer Linear Optimization</strong><br>\n            S. Bolusani, S. Coniglio, T. Ralphs, S. Tahernejad<br>', 'C1 title/authors')
+          html = once(html, '<em>Artificial Intelligence, 227, 1–31</em>', '<em>Artificial Intelligence, 277, 1–31</em>', 'J11 volume')
+          html = once(html, 'LIPIcs pages 21:1–29:13.', 'LIPIcs pages 29:1–29:13.', 'P20 article number')
+          html = once(html, 'https://dl.acm.org/doi/10.5555/3306127.3331784', 'https://doi.org/10.65109/qzba3283', 'P23 proceedings DOI')
+
+          cv = once(cv, r'\cventry{[C1]}{A Unified Framework for Multistage Discrete Optimization}{with T.~Ralphs}', r'\cventry{[C1]}{A Unified Framework for Multistage Mixed Integer Linear Optimization}{with S.~Bolusani, T.~Ralphs, S.~Tahernejad}', 'CV C1')
+          cv = once(cv, 'Annals of Operations Research, 238:309--335 (2023)', 'Annals of Operations Research, 328(1):309--335 (2023)', 'CV J25 volume')
+          cv = once(cv, '{Correlation analysis of deep learning methods in S-ICD}', '{Correlation analysis of deep learning methods in S-ICD screening}', 'CV J24 title')
+          cv = once(cv, 'European Joural of Operational Research', 'European Journal of Operational Research', 'CV J22 journal')
+          cv = once(cv, 'Artificial Intelligence (AIJ): 227, 1--31 (2019)', 'Artificial Intelligence (AIJ): 277, 1--31 (2019)', 'CV J11 volume')
+          cv = once(cv, 'Proceedings of 41st AAAI', 'Proceedings of the 38th AAAI', 'CV P26 AAAI ordinal')
+          cv = once(cv, 'Proceedings of 40th AAAI', 'Proceedings of the 37th AAAI', 'CV P25 AAAI ordinal')
+          cv = once(cv, 'pages 21:1--29:13, 2017', 'pages 29:1--29:13, 2017', 'CV P20 article number')
+
+          # Add CV conference publications that were absent from the webpage.
+          missing = [x for x in data if 'year' in x]
+          by_year = {}
+          for x in missing:
+              by_year.setdefault(x['year'], []).append(x)
+
+          def html_item(x):
+              return ('        <li><span class="date">' + x['year'] + '</span>\n'
+                      '          <div>\n'
+                      '            <strong>' + x['title'] + '</strong><br>\n'
+                      '            ' + x['authors'] + '<br>\n'
+                      '            <em>' + x['venue'] + '</em>\n'
+                      '          </div>\n'
+                      '        </li>\n')
+
+          for year in ['2017', '2013', '2010']:
+              to_add = [x for x in by_year.get(year, []) if f'<strong>{x["title"]}</strong>' not in html]
+              if not to_add:
+                  continue
+              marker = f'<h2 class="section-label">{year}</h2>'
+              p = html.index(marker)
+              end = html.index('      </ul>', p)
+              html = html[:end] + ''.join(html_item(x) for x in to_add) + html[end:]
+
+          for year in ['2012', '2011']:
+              if f'<h2 class="section-label">{year}</h2>' in html:
+                  continue
+              records = by_year[year]
+              section = ('      <!-- ======= ' + year + ' ======= -->\n'
+                         '      <h2 class="section-label">' + year + '</h2>\n'
+                         '      <ul class="news">\n' + ''.join(html_item(x) for x in records) + '      </ul>\n\n')
+              marker = '      <!-- ======= 2010 ======= -->'
+              html = html.replace(marker, section + marker, 1)
+
+          if '<h2 class="section-label">2009</h2>' not in html:
+              section = ('\n      <!-- ======= 2009 ======= -->\n'
+                         '      <h2 class="section-label">2009</h2>\n'
+                         '      <ul class="news">\n' + ''.join(html_item(x) for x in by_year['2009']) + '      </ul>\n')
+              html = html.replace('    </main>', section + '    </main>', 1)
+
+          # Add compact inline links to every webpage entry.
+          for x in data:
+              needle = f'<strong>{x["title"]}</strong>'
+              p = html.find(needle)
+              if p < 0:
+                  raise RuntimeError(f'HTML publication not found: {x["label"]} {x["title"]}')
+              s = html.rfind('<li', 0, p)
+              e = html.find('</li>', p)
+              block = html[s:e]
+              close = block.rfind('</div>')
+              if close < 0:
+                  raise RuntimeError(f'HTML div not found: {x["label"]}')
+              additions = []
+              for label, url in x['links']:
+                  if url not in block:
+                      additions.append(f'\n            &nbsp;·&nbsp; <a href="{url}">{label}</a>')
+              if additions:
+                  block = block[:close] + ''.join(additions) + block[close:]
+                  html = html[:s] + block + html[e:]
+
+          # Parse a moderncv cventry and return the six argument spans.
+          def spans(line):
+              pos = line.index(r'\cventry') + len(r'\cventry')
+              out = []
+              for _ in range(6):
+                  while pos < len(line) and line[pos].isspace():
+                      pos += 1
+                  if pos >= len(line) or line[pos] != '{':
+                      raise RuntimeError('cannot parse cventry: ' + line)
+                  pos += 1
+                  start = pos
+                  depth = 1
+                  while pos < len(line):
+                      ch = line[pos]
+                      esc = pos > 0 and line[pos-1] == '\\'
+                      if ch == '{' and not esc:
+                          depth += 1
+                      elif ch == '}' and not esc:
+                          depth -= 1
+                          if depth == 0:
+                              out.append((start, pos))
+                              pos += 1
+                              break
+                      pos += 1
+                  if depth:
+                      raise RuntimeError('unbalanced cventry: ' + line)
+              return out
+
+          link_by_label = {x['label']: x['links'] for x in data}
+          lines = cv.splitlines(keepends=True)
+          seen = set()
+          for i, line in enumerate(lines):
+              if line.lstrip().startswith('%') or r'\cventry{[' not in line:
+                  continue
+              for label, links in link_by_label.items():
+                  if r'\cventry{[' + label + ']}' not in line:
+                      continue
+                  if label in seen:
+                      raise RuntimeError('duplicate active CV label: ' + label)
+                  ss = spans(line)
+                  _, end = ss[3]
+                  pieces = [r'\href{' + url + '}{' + name + '}' for name, url in links if url not in line]
+                  if pieces:
+                      extra = r'\quad ' + r'\,$\cdot$\,'.join(pieces)
+                      line = line[:end] + extra + line[end:]
+                      lines[i] = line
+                  seen.add(label)
+                  break
+          absent = sorted(set(link_by_label) - seen)
+          if absent:
+              raise RuntimeError('CV labels not found: ' + ', '.join(absent))
+          cv = ''.join(lines)
+
+          hp.write_text(html, encoding='utf-8')
+          cp.write_text(cv, encoding='utf-8')
           PY
-          python /tmp/update_publications.py > /tmp/update.log 2>&1
-          status=$?
-          if [ "$status" -ne 0 ]; then
-            cat /tmp/update.log
-            cp /tmp/update.log update-publication-links-error.txt
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add update-publication-links-error.txt
-            git commit -m "Update publication-link error report" || true
-            git push || true
-            exit "$status"
-          fi
-          rm -f .github/workflows/update-publication-links.yml update-publication-links-error.txt
+      - name: Commit and clean temporary files
+        shell: bash
+        run: |
+          rm -f .github/workflows/update-publication-links.yml publication-links-data.json update-publication-links-error.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add publications.html cv/sections/publications.tex .github/workflows/update-publication-links.yml update-publication-links-error.txt
+          git add publications.html cv/sections/publications.tex .github/workflows/update-publication-links.yml publication-links-data.json update-publication-links-error.txt
           git commit -m "Add verified links to publications"
           git push
