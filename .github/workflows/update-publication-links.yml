@@ -15,11 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-      - name: Extract and run updater
+          fetch-depth: 3
+      - name: Run updater
         shell: bash
         run: |
-          git show HEAD^:.github/workflows/update-publication-links.yml > /tmp/old.yml
+          set +e
+          git show HEAD^^:.github/workflows/update-publication-links.yml > /tmp/old.yml
           python - <<'PY'
           from pathlib import Path
           text = Path('/tmp/old.yml').read_text()
@@ -29,10 +30,18 @@ jobs:
           code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
           Path('/tmp/update_publications.py').write_text(code)
           PY
-          python /tmp/update_publications.py
-      - name: Commit publication links
-        shell: bash
-        run: |
+          python /tmp/update_publications.py > /tmp/update.log 2>&1
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            cat /tmp/update.log
+            cp /tmp/update.log update-publication-links-error.txt
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add update-publication-links-error.txt
+            git commit -m "Record publication-link update error"
+            git push
+            exit "$status"
+          fi
           rm .github/workflows/update-publication-links.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
