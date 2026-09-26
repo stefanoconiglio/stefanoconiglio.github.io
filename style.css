@@ -49,8 +49,9 @@ strong { font-weight: 600; }
 }
 .topnav ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 28px;
+  gap: 8px 24px;
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -61,7 +62,6 @@ strong { font-weight: 600; }
 }
 .topnav a {
   color: var(--ink-soft);
-  text-transform: lowercase;
 }
 .topnav a[aria-current="page"] {
   color: var(--ink);
@@ -203,16 +203,12 @@ strong { font-weight: 600; }
 body.home-page { --max-width: 1240px; }
 .layout.home {
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr) 310px;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "side about news"
-    "side talks news";
+  grid-template-areas: "side about news";
   column-gap: 48px;
   row-gap: 0;
 }
 .layout.home .sidebar { grid-area: side; }
 .home-about { grid-area: about; }
-.home-talks { grid-area: talks; }
 .news-frame {
   grid-area: news;
   align-self: start;
@@ -232,7 +228,6 @@ body.home-page { --max-width: 1240px; }
   font-family: var(--mono);
   font-size: 0.8rem;
 }
-.home-talks > h2.section-label:first-child { margin-top: 24px; }
 
 /* ---------- In The Press: thumbnail cards ---------- */
 .press-grid {
@@ -330,6 +325,14 @@ footer {
 }
 footer p { margin: 0; }
 
+/* ---------- Medium: nav centres when it no longer fits on one line ---------- */
+@media (max-width: 1020px) {
+  .topnav ul {
+    justify-content: center;
+    gap: 8px 20px;
+  }
+}
+
 /* ---------- Medium: tighter columns, then news moves below about ---------- */
 @media (max-width: 1180px) {
   .layout.home {
@@ -340,11 +343,9 @@ footer p { margin: 0; }
 @media (max-width: 960px) {
   .layout.home {
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-    grid-template-rows: none;
     grid-template-areas:
       "side about"
-      "side news"
-      "side talks";
+      "side news";
   }
   .news-frame { margin-top: 12px; }
 }
@@ -356,12 +357,10 @@ footer p { margin: 0; }
     grid-template-areas:
       "side"
       "about"
-      "news"
-      "talks";
+      "news";
     row-gap: 22px;
   }
   .news-frame { margin-top: 0; }
-  .home-talks > h2.section-label:first-child { margin-top: 0; }
   .sidebar .affiliation {
     margin: 0 0 8px;
     font-size: 0.82rem;
