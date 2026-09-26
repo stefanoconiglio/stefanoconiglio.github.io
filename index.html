@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260926d">
+  <link rel="stylesheet" href="style.css?v=20260926e">
 </head>
-<body class="home-page">
+<body>
   <nav class="topnav">
     <ul>
       <li><a href="index.html" aria-current="page">Home</a></li>
@@ -26,10 +26,10 @@
     </ul>
   </nav>
 
-  <div class="layout home">
+  <div class="layout">
     {% include sidebar.html %}
 
-    <main class="content home-about">
+    <main class="content">
       <h2 class="section-label">About</h2>
 
       <p>
@@ -75,43 +75,7 @@
       <p class="more"><a href="career.html">Career: appointments, roles, teaching, and education →</a></p>
     </main>
 
-    <aside class="content news-frame" aria-labelledby="news-heading">
-      <h2 class="section-label" id="news-heading">News</h2>
-      <ul class="news">
-        <li>
-          <span class="date">Sep 2026</span>
-          <div>Invited speaker at the <strong>XXII ACBGroup Convention</strong>, <em>"Etica della responsabilità, cultura economica e scenari geopolitici. Progettare il futuro tra sviluppo, impresa e contesto globale"</em>, Teatro Sociale, Bergamo. <a href="https://www.bergamonews.it/2026/09/23/al-teatro-sociale-un-laboratorio-di-futuro-lo-sguardo-dei-professionisti-tra-sviluppo-impresa-e-contesto-globale/924080" rel="noopener">Event</a></div>
-        </li>
-        <li>
-          <span class="date">Sep 2026</span>
-          <div>Interviewed by <strong>BergamoNews</strong> on AI governance and training: "Intelligenza artificiale, Stefano Coniglio: «Va governata, la formazione è fondamentale»". <a href="https://www.bergamonews.it/2026/09/24/intelligenza-artificiale-stefano-coniglio-va-governata-la-formazione-e-fondamentale/924341/" rel="noopener">Read</a></div>
-        </li>
-        <li>
-          <span class="date">Sep 2026</span>
-          <div><strong>PANDA: Prior-guided Attentional Dual-path Architecture</strong> accepted to the <strong>NeurIPS 2026</strong> Main Track. <a href="https://openreview.net/forum?id=Kq4o9psxtB">OpenReview</a></div>
-        </li>
-        <li>
-          <span class="date">2026</span>
-          <div>Joined the <strong>ELLIS Society</strong> (ELLIS Unit Milan) and the Scientific and Technical Committee of <strong>RAISE — Research Centre for Responsible Artificial Intelligence, Society and Ethics</strong>.</div>
-        </li>
-        <li>
-          <span class="date">2026</span>
-          <div>Three papers accepted at <strong>ICLR 2026</strong> (Rio de Janeiro): on solving the k-hyperplane clustering problem, directional sheaf hypergraph networks, and Sheaves Reloaded.</div>
-        </li>
-        <li>
-          <span class="date">2025</span>
-          <div>Paper published in <em>Energy</em> (vol. 322, 135454): "Bridging theory and practice: efficiently solving the unit commitment problem in production cost models" (with P. Bunnak and S. Galelli).</div>
-        </li>
-        <li>
-          <span class="date">Sep 2025</span>
-          <div>Organized <strong>HEXAGON2025</strong> — The second HEXAGON Workshop on Power Grids, Benevento, Italy.</div>
-        </li>
-        <li>
-          <span class="date">2025</span>
-          <div>Keynote at the 3rd MATH4AI Workshop (UMI Group Mathematics for AI and Machine Learning), Bari, Italy.</div>
-        </li>
-      </ul>
-    </aside>
+    {% include news.html %}
   </div>
 
   <footer>
