@@ -199,6 +199,14 @@ strong { font-weight: 600; }
   padding-top: 2px;
 }
 
+/* ---------- Research group: one block per institution ---------- */
+.content hr.group-rule {
+  border: 0;
+  border-top: 1px solid var(--ink-faint);
+  opacity: 0.45;
+  margin: 44px 0 28px;
+}
+
 /* ---------- Home: sidebar | about | news ---------- */
 body.home-page { --max-width: 1240px; }
 .layout.home {
