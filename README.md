@@ -1,73 +1,36 @@
-# stefanoconiglio.github.io — starting scaffold
+# stefanoconiglio.github.io
 
-Hand-coded HTML/CSS site modelled on the structure of Ivana Ljubić's page
-(https://ivanaljubic.github.io/) but with restrained typography (Source Serif 4
-+ IBM Plex Mono) instead of the AcademicPages defaults.
+Personal website of Stefano Coniglio (University of Bergamo), served by GitHub Pages at
+https://stefanoconiglio.github.io.
 
-GitHub Pages builds the site with Jekyll. Shared fragments such as the sidebar live in `_includes/`; the browser still receives ordinary static HTML.
+Hand-written HTML and CSS (Source Serif 4 + IBM Plex Mono). GitHub Pages builds the site with Jekyll,
+which expands the shared fragments in `_includes/` (sidebar and News column); every page has empty
+front matter for that reason.
 
-## Files
+## Pages
 
-- `index.html` — landing page: bio, news, recent talks
-- `publications.html` — stub list, fill in
-- `talks.html` — stub list, fill in
-- `projects.html` — stubs for HEXAGON, AI4SF, etc.
-- `style.css` — shared stylesheet for all pages
-- `_includes/sidebar.html` — shared profile/sidebar included in every page via Jekyll/Liquid
+| File | Tab |
+| --- | --- |
+| `index.html` | Home: About and News |
+| `career.html` | Career (appointments, roles, teaching, supervision, service, education) |
+| `group.html` | Research Group |
+| `publications.html` | Publications |
+| `projects.html` | Projects |
+| `talks.html` | Research Talks |
+| `engagement.html` | Public Engagement |
+| `training.html` | Professional Training |
+| `news.html`, `news-verbose.html` | In the Press (thumbnails / list) |
 
-## Deploy
+`about.html` redirects to `career.html`.
 
-From the repo root:
+## Other files
 
-```
-git add index.html publications.html talks.html projects.html style.css
-git commit -m "Initial site scaffold (Ljubić-style)"
-git push
-```
-
-GitHub Pages will serve at https://stefanoconiglio.github.io within ~1 minute.
-
-## Things to do before going live
-
-All marked with `[BRACKETED PLACEHOLDERS]` in the HTML:
-
-1. **Title.** Replace `[Associate / Full]` with your actual rank.
-2. **Career sentence** in the About section (PhD institution and year, prior
-   positions before UniBg).
-3. **Research sentence** in the About section (methodological focus +
-   application domains).
-4. **Email.** Replace `[your-email]@unibg.it`.
-5. **Scholar / ORCID / DBLP IDs.** Search-and-replace `[ID]` and `[ORCID-ID]`.
-6. **Profile photo.** Drop a square JPG into `images/profile.jpg` and uncomment
-   the `<img>` tag in the sidebars (remove the `<div class="photo-placeholder">`
-   block). Or just delete the photo block entirely if you'd rather not have one.
-7. **News items** in `index.html` — add 3-5 recent things, dated.
-8. **Publications** — fill `publications.html` (or generate it from a BibTeX
-   file later if you want).
-9. **HEXAGON / AI4SF descriptions** in `projects.html`.
-
-## Design notes
-
-- The page is two-column (sticky 240px sidebar + flexible main) on desktop,
-  collapses to single-column on mobile (< 760px).
-- Source Serif 4 for body, IBM Plex Mono for nav + dates + small labels. The
-  monospace is a nod to your terminal taste without going full hacker-page.
-- Color palette: warm off-white (`#fdfcf8`) background, deep charcoal text,
-  muted scholarly blue (`#2d4a6b`) for links. All variables at the top of
-  `style.css` if you want to tweak.
-- Section headings use a small-caps mono label (e.g. "NEWS") rather than a
-  big serif heading — keeps the page calm.
-
-## If you want to extend
-
-- **Italian version:** duplicate `index.html` → `index.it.html`, translate, add a
-  language switcher in the sidebar.
-- **BibTeX-driven publications:** drop a `papers.bib` and a small JS parser, or
-  generate `publications.html` from a script you run locally.
-- **News feed from Obsidian/Quartz:** point a "Notes" link in the sidebar at
-  your Quartz site rather than duplicating content here.
-
+- `style.css` — all styling (bump the `?v=` query on every page after editing it)
+- `site.js` — Menu button on small screens
+- `images/press/` — press thumbnails (640x400); `files/events/` — event posters and programmes
+- `cv/` — LaTeX sources of the CV; `.github/workflows/build-cv.yml` rebuilds `cv/cv_SC.pdf` on push
 
 ## Local preview
 
-GitHub Pages expands the Liquid includes automatically. To preview the fully rendered site locally, run a local Jekyll server; opening a source `.html` file directly from disk will not expand `{% include ... %}` tags.
+Run a local Jekyll server (`jekyll serve`), or open the pages after expanding
+`{% include … %}` tags; opening the source files directly will not show the sidebar or News column.
