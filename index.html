@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260908c">
+  <link rel="stylesheet" href="style.css?v=20260926b">
 </head>
-<body>
+<body class="home-page">
   <nav class="topnav">
     <ul>
       <li><a href="index.html" aria-current="page">Home</a></li>
@@ -20,24 +20,72 @@
       <li><a href="publications.html">Publications</a></li>
       <li><a href="talks.html">Talks</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="group.html">Research Group</a></li>
       <li><a href="engagement.html">Engagement</a></li>
       <li><a href="news.html">In The Press</a></li>
     </ul>
   </nav>
 
-  <div class="layout">
+  <div class="layout home">
     {% include sidebar.html %}
 
-    <main class="content">
+    <main class="content home-about">
+      <h2 class="section-label">About</h2>
+
       <p>
-        Associate Professor of Computer Science and Rector's Delegate for Artificial Intelligence
-        at the <a href="https://www.unibg.it/">University of Bergamo</a>. My work focuses on
-        artificial intelligence, machine learning, and mathematical optimization, with more than
-        60 scientific publications. <a href="about.html">Full bio →</a>
+        I am an Associate Professor of Computer Science at the
+        <a href="https://www.unibg.it/">University of Bergamo</a>, where I also serve as
+        Rector's Delegate for Artificial Intelligence. I earned my BSc, MSc, and PhD in
+        Information Technology from Politecnico di Milano (PhD 2011, advisor: Prof. E. Amaldi),
+        then held postdoctoral and faculty positions at Politecnico di Milano, RWTH Aachen
+        University, and the University of Southampton — where I was Lecturer and then Associate
+        Professor of Operational Research (2016–2022) — before returning to Italy in 2022. I
+        was a Fellow of the Alan Turing Institute (2021–2023).
       </p>
 
-      <h2 class="section-label">News</h2>
+      <p>
+        My research focuses on artificial intelligence, machine learning, and mathematical
+        optimization for decision support. On the methods side, I work on combinatorial and
+        bilevel optimization (mixed-integer programming, cutting-plane and column-generation
+        methods) and, more recently, on graph and hypergraph neural networks. Application domains
+        include energy systems, algorithmic game theory, and deep learning. I was co-investigator
+        of the <strong>HEXAGON</strong> project (PRIN-PNRR, EU Next Generation EU). I co-designed
+        the interdepartmental <strong>AI for Sustainable Futures (AI4SF)</strong> PhD programme,
+        where I serve on the doctoral board and coordinate the curriculum
+        <strong>"Participatory development of AI models, methods and applications"</strong>.
+        I have authored more than 60 scientific publications.
+      </p>
+
+      <p>
+        In addition to my Rector's delegation, I am a member of the University of Bergamo's
+        Interdepartmental Working Group on Artificial Intelligence and of the Scientific and
+        Technical Committee of <strong>RAISE — Research Centre for Responsible Artificial
+        Intelligence, Society and Ethics</strong>. I am also a member of the <strong>ELLIS
+        Society</strong> (ELLIS Unit Milan) and of the <strong>Unione Matematica Italiana
+        (UMI)</strong>.
+      </p>
+
+      <p>
+        I serve as Associate Editor of the <em>Asia-Pacific Journal of Operational Research</em>
+        and hold the Italian National Scientific Qualification (ASN) as Full Professor in
+        Operations Research. I welcome collaboration in AI, machine learning, optimization, and
+        the responsible adoption of intelligent technologies.
+      </p>
+
+      <p class="more"><a href="about.html">Appointments, roles, teaching, and education →</a></p>
+    </main>
+
+    <aside class="content news-frame" aria-labelledby="news-heading">
+      <h2 class="section-label" id="news-heading">News</h2>
       <ul class="news">
+        <li>
+          <span class="date">Sep 2026</span>
+          <div>Invited speaker at the <strong>XXII ACBGroup Convention</strong>, <em>"Etica della responsabilità, cultura economica e scenari geopolitici. Progettare il futuro tra sviluppo, impresa e contesto globale"</em>, Teatro Sociale, Bergamo. <a href="https://www.bergamonews.it/2026/09/23/al-teatro-sociale-un-laboratorio-di-futuro-lo-sguardo-dei-professionisti-tra-sviluppo-impresa-e-contesto-globale/924080" rel="noopener">Event</a></div>
+        </li>
+        <li>
+          <span class="date">Sep 2026</span>
+          <div>Interviewed by <strong>BergamoNews</strong> on AI governance and training: "Intelligenza artificiale, Stefano Coniglio: «Va governata, la formazione è fondamentale»". <a href="https://www.bergamonews.it/2026/09/24/intelligenza-artificiale-stefano-coniglio-va-governata-la-formazione-e-fondamentale/924341/" rel="noopener">Read</a></div>
+        </li>
         <li>
           <span class="date">Sep 2026</span>
           <div><strong>PANDA: Prior-guided Attentional Dual-path Architecture</strong> accepted to the <strong>NeurIPS 2026</strong> Main Track. <a href="https://openreview.net/forum?id=Kq4o9psxtB">OpenReview</a></div>
@@ -63,7 +111,9 @@
           <div>Keynote at the 3rd MATH4AI Workshop (UMI Group Mathematics for AI and Machine Learning), Bari, Italy.</div>
         </li>
       </ul>
+    </aside>
 
+    <section class="content home-talks">
       <h2 class="section-label">Recent talks</h2>
       <ul class="news">
         <li>
@@ -75,7 +125,7 @@
           <div>"Graph and Hypergraph Learning via Complex- and Quaternion-Valued Spectral Convolutional Operators", keynote, <em>MATH4AI 2025</em>, Bari.</div>
         </li>
       </ul>
-    </main>
+    </section>
   </div>
 
   <footer>
