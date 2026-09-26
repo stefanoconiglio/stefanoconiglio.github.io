@@ -1,0 +1,6 @@
+# Files that are not part of the website. CLAUDE.md and README.md mention Liquid tags
+# in prose, which breaks the Jekyll build if GitHub Pages renders them.
+exclude:
+  - CLAUDE.md
+  - README.md
+  - cv.zip
