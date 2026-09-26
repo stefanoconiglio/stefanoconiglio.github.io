@@ -239,6 +239,12 @@ strong { font-weight: 600; }
   line-height: 1.45;
 }
 .news-frame .news .date { padding-top: 0; }
+.content.news-frame p.news-more {
+  margin: 10px 0 8px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
 .content p.more {
   font-family: var(--mono);
   font-size: 0.8rem;
