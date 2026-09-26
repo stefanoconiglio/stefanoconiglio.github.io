@@ -1,0 +1,56 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Group — Stefano Coniglio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260926a">
+</head>
+<body>
+  <nav class="topnav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="group.html" aria-current="page">Research Group</a></li>
+      <li><a href="engagement.html">Engagement</a></li>
+      <li><a href="news.html">In the Press</a></li>
+    </ul>
+  </nav>
+  <div class="layout">
+    {% include sidebar.html %}
+    <main class="content">
+      <h2>Research Group</h2>
+      <p>Current and former researchers in my group at the University of Bergamo.</p>
+
+      <h2 class="section-label">PhD Students</h2>
+      <ul class="news">
+        <li><span class="date">2025–</span><div><strong>Federico Belotti</strong><br>PhD candidate in <a href="https://phd-ai4sf.unibg.it/en">Artificial Intelligence for Sustainable Futures</a>, University of Bergamo.</div></li>
+        <li><span class="date">2026–</span><div><strong>Arash Abedi</strong><br>PhD candidate in <a href="https://phd-ai4sf.unibg.it/en">Artificial Intelligence for Sustainable Futures</a>, University of Bergamo.</div></li>
+        <li><span class="date">2026–</span><div><strong>Marco Zubani</strong><br>PhD candidate in <a href="https://phd-ai4sf.unibg.it/en">Artificial Intelligence for Sustainable Futures</a>, University of Bergamo.</div></li>
+      </ul>
+
+      <h2 class="section-label">Postdoctoral Researchers</h2>
+      <ul class="news">
+        <li><span class="date">Jan 2027–</span><div><strong>Wenshun Teng</strong><br>Postdoctoral researcher.</div></li>
+        <li><span class="date">Forthcoming</span><div><strong>Second postdoctoral researcher</strong><br>Recruitment in progress.</div></li>
+      </ul>
+
+      <h2 class="section-label">Former Postdoctoral Researchers</h2>
+      <ul class="news">
+        <li><span class="date">Former</span><div><strong><a href="https://www.linkedin.com/in/gianmarco-andreana-120b74252/">Gianmarco Andreana</a></strong></div></li>
+        <li><span class="date">Former</span><div><strong><a href="https://www.linkedin.com/in/claudiotomasi/">Claudio Tomasi</a></strong></div></li>
+      </ul>
+    </main>
+  </div>
+  <footer><p>&copy; <span id="year"></span> Stefano Coniglio</p></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
