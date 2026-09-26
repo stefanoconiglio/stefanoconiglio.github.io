@@ -10,9 +10,8 @@
   --accent-hover: #1f3550;
   --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --serif: 'Source Serif 4', 'Source Serif Pro', Charter, Georgia, serif;
-  --max-width: 980px;
+  --max-width: 1240px;
   --sidebar-width: 240px;
-  --gap: 64px;
 }
 
 /* ---------- Reset / base ---------- */
@@ -71,8 +70,9 @@ strong { font-weight: 600; }
 /* ---------- Layout ---------- */
 .layout {
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  gap: var(--gap);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) 310px;
+  grid-template-areas: "side main news";
+  column-gap: 48px;
   max-width: var(--max-width);
   margin: 40px auto 64px;
   padding: 0 32px;
@@ -207,16 +207,9 @@ strong { font-weight: 600; }
   margin: 44px 0 28px;
 }
 
-/* ---------- Home: sidebar | about | news ---------- */
-body.home-page { --max-width: 1240px; }
-.layout.home {
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) 310px;
-  grid-template-areas: "side about news";
-  column-gap: 48px;
-  row-gap: 0;
-}
-.layout.home .sidebar { grid-area: side; }
-.home-about { grid-area: about; }
+/* ---------- Every page: sidebar | content | news ---------- */
+.layout > .sidebar { grid-area: side; }
+.layout > main { grid-area: main; }
 .news-frame {
   grid-area: news;
   align-self: start;
@@ -343,16 +336,16 @@ footer p { margin: 0; }
 
 /* ---------- Medium: tighter columns, then news moves below about ---------- */
 @media (max-width: 1180px) {
-  .layout.home {
+  .layout {
     grid-template-columns: 200px minmax(0, 1fr) 260px;
     column-gap: 36px;
   }
 }
 @media (max-width: 960px) {
-  .layout.home {
+  .layout {
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
     grid-template-areas:
-      "side about"
+      "side main"
       "side news";
   }
   .news-frame { margin-top: 12px; }
@@ -360,14 +353,6 @@ footer p { margin: 0; }
 
 /* ---------- Narrow / mobile ---------- */
 @media (max-width: 860px) {
-  .layout.home {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "side"
-      "about"
-      "news";
-    row-gap: 22px;
-  }
   .news-frame { margin-top: 0; }
   .sidebar .affiliation {
     margin: 0 0 8px;
@@ -383,7 +368,11 @@ footer p { margin: 0; }
     flex-wrap: wrap;
   }
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "side"
+      "main"
+      "news";
     gap: 22px;
     max-width: 760px;
     margin: 24px auto 52px;
