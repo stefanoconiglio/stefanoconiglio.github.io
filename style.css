@@ -205,6 +205,14 @@ strong { font-weight: 600; }
   padding-top: 2px;
 }
 
+/* ---------- People named in an entry ---------- */
+.person {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ink-faint);
+}
+
 /* ---------- Research group: one block per institution ---------- */
 .content hr.group-rule {
   border: 0;
