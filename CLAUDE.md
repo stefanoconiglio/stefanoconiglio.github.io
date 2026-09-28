@@ -10,6 +10,9 @@ All biographical data, publications, grants, talks, awards, and service.
 The CV that the site links to is built from this repository: `cv/cv_SC.tex` plus `cv/sections/*.tex`.
 A GitHub Action rebuilds `cv/cv_SC.pdf` on every push that touches those files (and commits it as
 "Rebuild CV PDF", so `git pull --rebase` before pushing). Keep the site and `cv/sections/` in sync.
+`cv/sections/public_engagement.tex` (Public engagement, Professional training, Media coverage) is generated
+from `engagement.html`, `training.html` and `news.html` by `python3 tools/site_to_cv.py`: edit those pages,
+rerun the script, and never edit that CV file by hand.
 The Google Drive copy below is older and is not what the site serves.
 
 - Main file: `/home/coniglio/Insync/stefano.coniglio@unibg.it/Google Drive/WORK/CAREER/CV/cv/cv_SC.tex`
