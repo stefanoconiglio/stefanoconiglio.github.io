@@ -13,6 +13,10 @@ A GitHub Action rebuilds `cv/cv_SC.pdf` on every push that touches those files (
 `cv/sections/public_engagement.tex` (Public engagement, Professional training, Media coverage) is generated
 from `engagement.html`, `training.html` and `news.html` by `python3 tools/site_to_cv.py`: edit those pages,
 rerun the script, and never edit that CV file by hand.
+`cv/cv_SC_europass.tex` is the same CV in Europass format (work contacts only, dated and signed, with the
+declarations under art. 76 DPR 445/2000 and art. 13 GDPR). It inputs the same `cv/sections/*.tex`, mapping the moderncv
+commands onto `europasscv`, so content is written once. Build it with `latexmk -pdf -outdir=build cv_SC_europass.tex` in
+`cv/`; it is not built by the GitHub Action and its PDF is not committed.
 The Google Drive copy below is older and is not what the site serves.
 
 - Main file: `/home/coniglio/Insync/stefano.coniglio@unibg.it/Google Drive/WORK/CAREER/CV/cv/cv_SC.tex`

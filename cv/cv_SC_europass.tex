@@ -1,0 +1,63 @@
+% Curriculum vitae in European (Europass) format, with the declarations required
+% by Italian calls: art. 76 DPR 445/2000 and art. 13 GDPR (EU 2016/679).
+%
+% It typesets the same files as cv_SC.tex (sections/*.tex): the moderncv commands
+% they use (\section, \subsection, \cventry, \cvitem) are mapped below onto the
+% europasscv layout, so every entry is written once and appears in both CVs.
+% Personal data beyond work contacts (date of birth, nationality, home address,
+% private phone and e-mail, photo) is deliberately left out.
+%
+% Build: latexmk -pdf -outdir=build cv_SC_europass.tex
+
+\documentclass[english,a4paper]{europasscv}
+
+\usepackage[english]{babel}
+\usepackage{amssymb}
+
+\newcommand{\publink}[2]{\href{#1}{\textcolor{blue}{\underline{\fontfamily{pcr}\selectfont #2}}}}
+
+% moderncv -> europasscv
+\newcommand{\cvifempty}[3]{\if\relax\detokenize{#1}\relax #2\else #3\fi}
+\renewcommand{\section}[1]{\ecvsection{#1}}
+\renewcommand{\subsection}[1]{\ecvtitle{}{#1}}
+\newcommand{\cvitem}[2]{\ecvitem{#1}{#2}}
+% \cventry{date}{title}{institution}{place}{detail}{description}, as in moderncv
+\newcommand{\cventry}[6]{\ecvitem{#1}{\textbf{#2}%
+  \cvifempty{#3}{}{, \textit{#3}}\cvifempty{#4}{}{, #4}\cvifempty{#5}{}{, #5}%
+  \cvifempty{#6}{}{\newline{\small #6}}}}
+
+\newcommand{\cvdate}{\number\day/\number\month/\number\year}
+
+\ecvname{Stefano Coniglio}
+\ecvfootername{Stefano Coniglio}
+\ecvaddress{Department of Economics, University of Bergamo, Via dei Caniana 2, 24127 Bergamo, Italy}
+\ecvworkphone{+39 035 2052132}
+\ecvemail{stefano.coniglio@unibg.it}
+\ecvhomepage{stefanoconiglio.github.io}
+\ecvorcid{0000-0001-9568-4385}
+
+\begin{document}
+\begin{europasscv}
+
+\ecvpersonalinfo
+
+\input{sections/appointments}
+\input{sections/publications}
+\input{sections/talks_and_conferences}
+\input{sections/public_engagement}
+\input{sections/service_and_teaching}
+\input{sections/supervision}
+\input{sections/languages}
+
+\ecvsection{Declarations}
+
+\ecvitem{Dichiarazione sostitutiva}{Il sottoscritto Stefano Coniglio, consapevole delle sanzioni penali previste dall'art.~76 del D.P.R. 28 dicembre 2000, n.~445, per le ipotesi di falsità in atti e di dichiarazioni mendaci, dichiara, ai sensi degli artt.~46 e 47 del medesimo D.P.R., che le informazioni riportate nel presente curriculum vitae corrispondono al vero.}
+
+\ecvitem{Trattamento dei dati personali}{Il sottoscritto autorizza il trattamento dei dati personali contenuti nel presente curriculum vitae ai sensi dell'art.~13 del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 30 giugno 2003, n.~196, come modificato dal D.Lgs. 10 agosto 2018, n.~101.}
+
+\ecvitem{}{\small\textit{English translation.} The undersigned, aware of the criminal penalties set by art.~76 of Presidential Decree no.~445 of 28 December 2000 for false statements and forged documents, declares under arts.~46 and 47 of the same decree that the information in this curriculum vitae is true. He authorizes the processing of the personal data it contains under art.~13 of Regulation (EU) 2016/679 (GDPR) and Legislative Decree no.~196/2003, as amended by Legislative Decree no.~101/2018.}
+
+\ecvitem[24pt]{Bergamo, \cvdate}{\includegraphics[width=4cm]{firma}\newline Stefano Coniglio}
+
+\end{europasscv}
+\end{document}
