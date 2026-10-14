@@ -5,3 +5,4 @@ exclude:
   - README.md
   - cv.zip
   - tools
+  - LOG.md
