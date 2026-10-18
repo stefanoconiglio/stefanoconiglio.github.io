@@ -6,3 +6,5 @@ exclude:
   - cv.zip
   - tools
   - LOG.md
+  - AGENTS.md
+  - strategium
