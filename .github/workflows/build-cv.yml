@@ -16,6 +16,9 @@ permissions:
 
 jobs:
   build:
+    # Only in the private repository, which holds the project: its commit then reaches the public site with the
+    # next `publish` (claude-config #75). In the public mirror a commit of its own would block `publish`.
+    if: github.repository == 'stefanoconiglio/stefanoconiglio.github.io-dev'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
