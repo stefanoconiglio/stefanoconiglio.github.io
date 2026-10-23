@@ -1,0 +1,1027 @@
+[
+ {
+  "handle": "10446/229189",
+  "title": "On coordinated cutting plane generation and mixed integer programs with nonconvex 2-norm constraints",
+  "authors": [
+   "Coniglio, Stefano"
+  ],
+  "year": "2013",
+  "type": "article",
+  "doi": "10.1007/s10288-012-0199-7",
+  "venue": "4OR",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229289",
+  "title": "On the exact separation of cover inequalities of maximum-depth",
+  "authors": [
+   "Catanzaro, Daniele",
+   "Coniglio, Stefano",
+   "Furini, Fabio"
+  ],
+  "year": "2022",
+  "type": "article",
+  "doi": "10.1007/s11590-021-01741-0",
+  "venue": "OPTIMIZATION LETTERS",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229290",
+  "title": "Elastic Traffic Engineering Subject to a Fair Bandwidth Allocation via Bilevel Programming",
+  "authors": [
+   "Coniglio, Stefano",
+   "Gianoli, Luca Giovanni",
+   "Amaldi, Edoardo",
+   "Capone, Antonio"
+  ],
+  "year": "2020",
+  "type": "article",
+  "doi": "10.1109/tnet.2020.3007572",
+  "venue": "IEEE-ACM TRANSACTIONS ON NETWORKING",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229292",
+  "title": "Deep learning methods for screening patients' S-ICD implantation eligibility",
+  "authors": [
+   "Dunn, Anthony J.",
+   "Elrefai, Mohamed H.",
+   "Roberts, Paul R.",
+   "Coniglio, Stefano",
+   "Wiles, Benedict M",
+   "Zemkoho, Alain B."
+  ],
+  "year": "2021",
+  "type": "article",
+  "doi": "10.1016/j.artmed.2021.102139",
+  "venue": "ARTIFICIAL INTELLIGENCE IN MEDICINE",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229293",
+  "title": "Computing a Pessimistic Stackelberg Equilibrium with Multiple Followers: The Mixed-Pure Case",
+  "authors": [
+   "Coniglio, Stefano",
+   "Gatti, Nicola",
+   "Marchesi, Alberto"
+  ],
+  "year": "2020",
+  "type": "article",
+  "doi": "10.1007/s00453-019-00648-8",
+  "venue": "ALGORITHMICA",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229294",
+  "title": "Airport capacity extension, fleet investment, and optimal aircraft scheduling in a multilevel market model: quantifying the costs of imperfect markets",
+  "authors": [
+   "Coniglio, Stefano",
+   "Sirvent, Mathia",
+   "Weibelzahl, Martin"
+  ],
+  "year": "2021",
+  "type": "article",
+  "doi": "10.1007/s00291-021-00621-4",
+  "venue": "OR SPECTRUM",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229295",
+  "title": "A lexicographic pricer for the fractional bin packing problem",
+  "authors": [
+   "Coniglio, Stefano",
+   "D'Andreagiovanni, Fabio",
+   "Furini, Fabio"
+  ],
+  "year": "2019",
+  "type": "article",
+  "doi": "10.1016/j.orl.2019.10.011",
+  "venue": "OPERATIONS RESEARCH LETTERS",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229296",
+  "title": "A distance-based point-reassignment heuristic for the k-hyperplane clustering problem",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano"
+  ],
+  "year": "2013",
+  "type": "article",
+  "doi": "10.1016/j.ejor.2012.09.026",
+  "venue": "EUROPEAN JOURNAL OF OPERATIONAL RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229297",
+  "title": "Data Uncertainty in Virtual Network Embedding: Robust Optimization and Protection Levels",
+  "authors": [
+   "Coniglio, Stefano",
+   "Koster, Arie M. C. A.",
+   "Tieves, Martin"
+  ],
+  "year": "2016",
+  "type": "article",
+  "doi": "10.1007/s10922-016-9376-x",
+  "venue": "JOURNAL OF NETWORK AND SYSTEMS MANAGEMENT",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229299",
+  "title": "Bilevel programming methods for computing single-leader-multi-follower equilibria in normal-form and polymatrix games",
+  "authors": [
+   "Basilico, Nicola",
+   "Coniglio, Stefano",
+   "Gatti, Nicola",
+   "Marchesi, Alberto"
+  ],
+  "year": "2020",
+  "type": "article",
+  "doi": "10.1007/s13675-019-00114-8",
+  "venue": "EURO JOURNAL ON COMPUTATIONAL OPTIMIZATION",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229300",
+  "title": "Coordinated cutting plane generation via multi-objective separation",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Gualandi, Stefano"
+  ],
+  "year": "2014",
+  "type": "article",
+  "doi": "10.1007/s10107-012-0596-x",
+  "venue": "MATHEMATICAL PROGRAMMING",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229301",
+  "title": "Network Optimization Problems Subject to Max-Min Fair Flow Allocation",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Capone, Antonio",
+   "Coniglio, Stefano",
+   "Gianoli, Luca G."
+  ],
+  "year": "2013",
+  "type": "article",
+  "doi": "10.1109/lcomm.2013.060513.130351",
+  "venue": "IEEE COMMUNICATIONS LETTERS",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229302",
+  "title": "A workload-dependent task assignment policy for crowdsourcing",
+  "authors": [
+   "Catallo, Ilio",
+   "Coniglio, Stefano",
+   "Fraternali, Piero",
+   "Martinenghi, Davide"
+  ],
+  "year": "2017",
+  "type": "article",
+  "doi": "10.1007/s11280-016-0428-7",
+  "venue": "WORLD WIDE WEB",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229303",
+  "title": "Optimizing over the Closure of Rank Inequalities with a Small Right-Hand Side for the Maximum Stable Set Problem via Bilevel Programming",
+  "authors": [
+   "Coniglio, Stefano",
+   "Gualandi, Stefano"
+  ],
+  "year": "2022",
+  "type": "article",
+  "doi": "10.1287/ijoc.2021.1115",
+  "venue": "INFORMS JOURNAL ON COMPUTING",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229304",
+  "title": "Discrete optimization methods to fit piecewise affine models to data points",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Taccari, Leonardo"
+  ],
+  "year": "2016",
+  "type": "article",
+  "doi": "10.1016/j.cor.2016.05.001",
+  "venue": "COMPUTERS & OPERATIONS RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229306",
+  "title": "A new branch-and-bound algorithm for the maximum edge-weighted clique problem",
+  "authors": [
+   "San Segundo, Pablo",
+   "Coniglio, Stefano",
+   "Furini, Fabio",
+   "Ljubić, Ivana"
+  ],
+  "year": "2019",
+  "type": "article",
+  "doi": "10.1016/j.ejor.2019.03.047",
+  "venue": "EUROPEAN JOURNAL OF OPERATIONAL RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229307",
+  "title": "Lot sizing with storage losses under demand uncertainty",
+  "authors": [
+   "Coniglio, Stefano",
+   "Koster, Arie M. C. A.",
+   "Spiekermann, Nils"
+  ],
+  "year": "2018",
+  "type": "article",
+  "doi": "10.1007/s10878-017-0147-8",
+  "venue": "JOURNAL OF COMBINATORIAL OPTIMIZATION",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229309",
+  "title": "Leadership in singleton congestion games: What is hard and what is easy",
+  "authors": [
+   "Castiglioni, Matteo",
+   "Marchesi, Alberto",
+   "Gatti, Nicola",
+   "Coniglio, Stefano"
+  ],
+  "year": "2019",
+  "type": "article",
+  "doi": "10.1016/j.artint.2019.103177",
+  "venue": "ARTIFICIAL INTELLIGENCE",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229310",
+  "title": "A new combinatorial branch-and-bound algorithm for the Knapsack Problem with Conflicts",
+  "authors": [
+   "Coniglio, Stefano",
+   "Furini, Fabio",
+   "San Segundo, Pablo"
+  ],
+  "year": "2021",
+  "type": "article",
+  "doi": "10.1016/j.ejor.2020.07.023",
+  "venue": "EUROPEAN JOURNAL OF OPERATIONAL RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229329",
+  "title": "Deep learning-based insights on T:R ratio behaviour during prolonged screening for S-ICD eligibility",
+  "authors": [
+   "Wiles, Benedict M.",
+   "Dunn, Anthony J.",
+   "Coniglio, Stefano",
+   "Zemkoho, Alain B.",
+   "Roberts, Paul R.",
+   "Elrefai, Mohamed",
+   "Abouelasaad, Mohamed"
+  ],
+  "year": "2022",
+  "type": "article",
+  "doi": "10.1007/s10840-022-01245-6",
+  "venue": "JOURNAL OF INTERVENTIONAL CARDIAC ELECTROPHYSIOLOGY",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229349",
+  "title": "Private Bayesian Persuasion with Sequential Games",
+  "authors": [
+   "Celli, Andrea",
+   "Coniglio, Stefano",
+   "Gatti, Nicola"
+  ],
+  "year": "2020",
+  "type": "conferenceObject",
+  "doi": "10.1609/aaai.v34i02.5557",
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 2020",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229350",
+  "title": "k-Hyperplane Clustering Problem: Column Generation and a Metaheuristic",
+  "authors": [
+   "Cafieri, Sonia",
+   "Mucherino, Antonio",
+   "Nannicini, Giacomo",
+   "Tarissan, Fabien",
+   "Liberti, Leo",
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Dhyani, Kanika"
+  ],
+  "year": "2009",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Proceedings of the 8th CTW on Graphs and Combinatorial Optimization",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229351",
+  "title": "Formulations and heuristics for the k-Piecewise Affine Model Fitting problem",
+  "authors": [
+   "Adacher, L.",
+   "Flamini, M.",
+   "Leo, G.",
+   "Nicosia, G.",
+   "Pacifici, A.",
+   "Piccialli, V.",
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Taccari, Leonardo"
+  ],
+  "year": "2011",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Proceedings of the 10th CTW on Graphs and Combinatorial Optimization",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229353",
+  "title": "Facility Location with Item Storage and Delivery",
+  "authors": [
+   "Sforza, Antonio",
+   "Sterle, Claudio",
+   "Coniglio, Stefano",
+   "Fliege, Jorg",
+   "Walton, Ruth"
+  ],
+  "year": "2017",
+  "type": "conferenceObject",
+  "doi": "10.1007/978-3-319-67308-0_29",
+  "venue": "Springer Proceedings in Mathematics and Statistics",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229354",
+  "title": "Maximum throughput network routing subject to fair flow allocation",
+  "authors": [
+   "Fouilhoux, Pierre",
+   "Neves Gouveia, Luis Eduardo",
+   "Mahjoub, Ridha A.",
+   "Paschos, Vangelis T.",
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Taccari, Leonardo"
+  ],
+  "year": "2014",
+  "type": "conferenceObject",
+  "doi": "10.1007/978-3-319-09174-7_1",
+  "venue": "Combinatorial Optimization. Third International Symposium, ISCO 2014, Lisbon, Portugal, March 5-7, 2014, Revised Selected Papers",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229355",
+  "title": "Bilevel programming approaches to the computation of optimistic and pessimistic single-leader-multi-follower equilibria",
+  "authors": [
+   "Iliopoulos, Costas S.",
+   "Pissis, Solon P.",
+   "Puglisi, Simon J.",
+   "Raman, Rajeev",
+   "Basilico, Nicola",
+   "Coniglio, Stefano",
+   "Gatti, Nicola",
+   "Marchesi, Alberto"
+  ],
+  "year": "2017",
+  "type": "conferenceObject",
+  "doi": "10.4230/lipics.sea.2017.31",
+  "venue": "16th International Symposium on Experimental Algorithms (SEA 2017)",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229356",
+  "title": "On single-path network routing subject to max-min fair flow allocation",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Gianoli, Luca G.",
+   "Ileri, Can Umut"
+  ],
+  "year": "2013",
+  "type": "article",
+  "doi": "10.1016/j.endm.2013.05.136",
+  "venue": "ELECTRONIC NOTES IN DISCRETE MATHEMATICS",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229357",
+  "title": "Improving Cutting Plane Generation with 0-1 Inequalities by Bi-criteria Separation",
+  "authors": [
+   "Festa, Paola",
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Gualandi, Stefano"
+  ],
+  "year": "2010",
+  "type": "conferenceObject",
+  "doi": "10.1007/978-3-642-13193-6_23",
+  "venue": "Experimental Algorithms. 9th International Symposium, SEA 2010, Ischia Island, Naples, Italy, May 20-22, 2010. Proceedings",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229369",
+  "title": "On the separation of topology-free rank inequalities for the max stable set problem",
+  "authors": [
+   "Iliopoulos,  Costas S.",
+   "Pissis, Solon P.",
+   "Puglisi, Simon J.",
+   "Raman, Rajeev",
+   "Coniglio, Stefano",
+   "Gualandi, Stefano"
+  ],
+  "year": "2017",
+  "type": "conferenceObject",
+  "doi": "10.4230/lipics.sea.2017.29",
+  "venue": "16th International Symposium on Experimental Algorithms (SEA 2017)",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229370",
+  "title": "Optimization models for injured people evacuation in medium/maxi health-care emergencies",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Iuliano, Claudio"
+  ],
+  "year": "2010",
+  "type": "conferenceObject",
+  "doi": "10.1109/whcm.2010.5441250",
+  "venue": "2010 IEEE Workshop on Health Care Management (WHCM)",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229378",
+  "title": "Pessimistic Leader-Follower Equilibria with Multiple Followers",
+  "authors": [
+   "Sierra, Carle",
+   "Bacchus, Fahiem",
+   "Coniglio, Stefano",
+   "Marchesi, Alberto",
+   "Gatti, Nicola"
+  ],
+  "year": "2017",
+  "type": "conferenceObject",
+  "doi": "10.24963/ijcai.2017/25",
+  "venue": "Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229379",
+  "title": "Computing optimal ex ante correlated equilibria in two-player sequential games",
+  "authors": [
+   "Agmon, N.",
+   "Taylor, M.E.",
+   "Elkind, E.",
+   "Veloso, M.",
+   "Celli, Andrea",
+   "Coniglio, Stefano",
+   "Gatti, Nicola"
+  ],
+  "year": "2019",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Proceedings of the 18th International Conference on Autonomous Agents and Multiagent Systems, AAMAS",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229380",
+  "title": "On robust lot sizing problems with storage deterioration, with applications to heat and power cogeneration",
+  "authors": [
+   "Cerulli, Raffaele",
+   "Fujishige, Satoru",
+   "Mahjoub, A. Ridha",
+   "Coniglio, Stefano",
+   "Koster, Arie",
+   "Spiekermann, Nils"
+  ],
+  "year": "2016",
+  "type": "conferenceObject",
+  "doi": "10.1007/978-3-319-45587-7_3",
+  "venue": "Combinatorial Optimization: 4th International Symposium, ISCO 2016, Vietri sul Mare, Italy, May 16-18, 2016, Revised Selected Papers",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229381",
+  "title": "Energy-aware traffic engineering with elastic demands and MMF bandwidth allocation",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Capone, Antonio",
+   "Coniglio, Stefano",
+   "Gianoli, Luca G."
+  ],
+  "year": "2013",
+  "type": "conferenceObject",
+  "doi": "10.1109/camad.2013.6708111",
+  "venue": "2013 IEEE 18th International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD)",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229382",
+  "title": "On the generation of cutting planes which maximize the bound improvement",
+  "authors": [
+   "Bampis, Evripidis",
+   "Coniglio, Stefano",
+   "Tieves, Martin"
+  ],
+  "year": "2015",
+  "type": "conferenceObject",
+  "doi": "10.1007/978-3-319-20086-6_8",
+  "venue": "Experimental Algorithms: 14th International Symposium, SEA 2015, Paris, France, June 29 – July 1, 2015 Proceedings",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229383",
+  "title": "Single and multi-group evacuation in medium and maxi health-care emergencies",
+  "authors": [
+   "Testi, Angela",
+   "Tànfani, Elena",
+   "Ivaldi, Enrico",
+   "Carello, Giuliana",
+   "Aringhieri, Roberto",
+   "Fragnelli, Vito",
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Iuliano, Claudio"
+  ],
+  "year": "2010",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Operations research for patient - centered health care delivery. Proceedings of the XXXVI International ORAHS Conference",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229384",
+  "title": "An Adaptive Point-Reassignment Metaheuristic for the k-Hyperplane Clustering Problem",
+  "authors": [
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano"
+  ],
+  "year": "2009",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Proceedings of the VIII Metaheuristics International Conference (MIC 2009)",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229386",
+  "title": "Methods for Finding Leader-Follower Equilibria with Multiple Followers",
+  "authors": [
+   "Thangarajah, J.",
+   "Tuyls, K.",
+   "Jonker, C.",
+   "Marsella, S.",
+   "Basilico, Nicola",
+   "Coniglio, Stefano",
+   "Gatti, Nicola"
+  ],
+  "year": "2016",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Proceedings of the 15th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2016)",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229387",
+  "title": "Leadership in Singleton Congestion Games",
+  "authors": [
+   "Lang, Jérôme",
+   "Marchesi, Alberto",
+   "Coniglio, Stefano",
+   "Gatti, Nicola"
+  ],
+  "year": "2018",
+  "type": "conferenceObject",
+  "doi": "10.24963/ijcai.2018/62",
+  "venue": "Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229388",
+  "title": "On the computational complexity of the virtual network embedding problem",
+  "authors": [
+   "Pioro, Michal",
+   "Tomaszewski, Artur",
+   "Rak, Jacek",
+   "Amaldi, Edoardo",
+   "Coniglio, Stefano",
+   "Koster, Arie M. C. A.",
+   "Tieves, Martin"
+  ],
+  "year": "2016",
+  "type": "conferenceObject",
+  "doi": "10.1016/j.endm.2016.03.028",
+  "venue": "ELECTRONIC NOTES IN DISCRETE MATHEMATICS",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229389",
+  "title": "The impact of the norm on the k-Hyperplane Clustering problem: relaxations, restrictions, approximation factors, and exact formulations",
+  "authors": [
+   "Adacher, L.",
+   "Flamini, M.",
+   "Leo, G.",
+   "Nicosia, G.",
+   "Pacifici, A.",
+   "Piccialli, V.",
+   "Coniglio, Stefano"
+  ],
+  "year": "2011",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "Proceedings of the 10th CTW on Graphs and Combinatorial Optimization",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/229390",
+  "title": "Virtual network embedding under uncertainty: Exact and heuristic approaches",
+  "authors": [
+   "Coniglio, Stefano",
+   "Koster, Arie M. C. A.",
+   "Tieves, Martin"
+  ],
+  "year": "2015",
+  "type": "conferenceObject",
+  "doi": "10.1109/drcn.2015.7148978",
+  "venue": "2015 11th International Conference on the Design of Reliable Communication Networks (DRCN)",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/235409",
+  "title": "Submodular maximization of concave utility functions composed with a set-union operator with applications to maximal covering location problems",
+  "authors": [
+   "Coniglio, Stefano",
+   "Furini, Fabio",
+   "Ljubic, Ivana"
+  ],
+  "year": "2022",
+  "type": "article",
+  "doi": "10.1007/s10107-022-01884-7",
+  "venue": "MATHEMATICAL PROGRAMMING",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/235410",
+  "title": "Role of deep learning methods in screening for subcutaneous implantable cardioverter defibrillator in heart failure",
+  "authors": [
+   "Elrefai, M.",
+   "Abouelasaad, M.",
+   "Wiles, B. M.",
+   "Dunn, A. J.",
+   "Coniglio, Stefano",
+   "Zemkoho, A. B.",
+   "Morgan, J. M.",
+   "Roberts, P. R."
+  ],
+  "year": "2023",
+  "type": "article",
+  "doi": "10.1111/anec.13028",
+  "venue": "ANNALS OF NONINVASIVE ELECTROCARDIOLOGY",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/235411",
+  "title": "Energy storage operation and electricity market design: On the market power of monopolistic storage operators",
+  "authors": [
+   "Bjorndal, E.",
+   "Bjorndal, M. H.",
+   "Coniglio, Stefano",
+   "Korner, M. -F.",
+   "Leinauer, C.",
+   "Weibelzahl, M."
+  ],
+  "year": "2023",
+  "type": "article",
+  "doi": "10.1016/j.ejor.2022.09.012",
+  "venue": "EUROPEAN JOURNAL OF OPERATIONAL RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/245109",
+  "title": "Correlation analysis of deep learning methods in S-ICD screening",
+  "authors": [
+   "Elrefai, Mohamed",
+   "Abouelasaad, Mohamed",
+   "Wiles, Benedict M.",
+   "Dunn, Anthony J.",
+   "Coniglio, Stefano",
+   "Zemkoho, Alain B.",
+   "Morgan, John",
+   "Roberts, Paul R."
+  ],
+  "year": "2023",
+  "type": "article",
+  "doi": "10.1111/anec.13056",
+  "venue": "ANNALS OF NONINVASIVE ELECTROCARDIOLOGY",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/245110",
+  "title": "Deep learning and hyperparameter optimization for assessing one’s eligibility for a subcutaneous implantable cardioverter-defibrillator",
+  "authors": [
+   "Dunn, Anthony J.",
+   "Coniglio, Stefano",
+   "Elrefai, Mohamed",
+   "Roberts, Paul R.",
+   "Wiles, Benedict M.",
+   "Zemkoho, Alain B."
+  ],
+  "year": "2023",
+  "type": "article",
+  "doi": "10.1007/s10479-023-05326-1",
+  "venue": "ANNALS OF OPERATIONS RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/245111",
+  "title": "SigMaNet: One Laplacian to Rule Them All",
+  "authors": [
+   "Fiorini, Stefano",
+   "Coniglio, Stefano",
+   "Ciavotta, Michele",
+   "Messina, Vincenzina"
+  ],
+  "year": "2023",
+  "type": "conferenceObject",
+  "doi": "10.1609/aaai.v37i6.25919",
+  "venue": "Proceedings of the 37th AAAI Conference on Artificial Intelligence",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/257829",
+  "title": "A Numerically Exact Algorithm for the Bin-Packing Problem",
+  "authors": [
+   "Baldacci, Roberto",
+   "Coniglio, Stefano",
+   "Cordeau, Jean-Françoi",
+   "Furini, Fabio"
+  ],
+  "year": "2024",
+  "type": "article",
+  "doi": "10.1287/ijoc.2022.0257",
+  "venue": "INFORMS JOURNAL ON COMPUTING",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/263862",
+  "title": "Graph Learning in 4D: a Quaternion-valued Laplacian to Enhance Spectral GCNs",
+  "authors": [
+   "Fiorini, Stefano",
+   "Coniglio, Stefano",
+   "Ciavotta, Michele",
+   "Messina, Enza"
+  ],
+  "year": "2024",
+  "type": "conferenceObject",
+  "doi": "10.1609/aaai.v38i11.29088",
+  "venue": "Proceedings of the 38th AAAI Conference on Artificial Intelligence",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/276449",
+  "title": "Intelligenza artificiale: un'agenda di ricerca. White paper del Tavolo Interdipartimentale sull’Intelligenza Artificiale dell’Università degli Studi di Bergamo",
+  "authors": [
+   "Cerea, Francesca",
+   "Coniglio, Stefano",
+   "Lehmann, Hagen",
+   "Murru, Maria Francesca",
+   "Previtali, Giuseppe",
+   "Redi, Federico Leo",
+   "Sala, Roberto",
+   "Torri, Gabriele"
+  ],
+  "year": "2024",
+  "type": "other",
+  "doi": "10.62336/unibg.978-88-97413-83-7",
+  "venue": "",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/304185",
+  "title": "Bridging theory and practice: Efficiently solving the unit commitment problem in production cost models",
+  "authors": [
+   "Bunnak, Phumthep",
+   "Coniglio, Stefano",
+   "Galelli, Stefano"
+  ],
+  "year": "2025",
+  "type": "article",
+  "doi": "10.1016/j.energy.2025.135454",
+  "venue": "ENERGY",
+  "rights": [
+   "info:eu-repo/semantics/closedAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/304186",
+  "title": "Let There be Direction in Hypergraph Neural Networks",
+  "authors": [
+   "Fiorini, Stefano",
+   "Coniglio, Stefano",
+   "Ciavotta, Michele",
+   "Del Bue, Alessio"
+  ],
+  "year": "2024",
+  "type": "article",
+  "doi": null,
+  "venue": "TRANSACTIONS ON MACHINE LEARNING RESEARCH",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ },
+ {
+  "handle": "10446/320842",
+  "title": "A Bilevel Optimization Model and a Heuristic Solution Method for Transformer Rating Optimization",
+  "authors": [
+   "Coniglio, Stefano",
+   "Garuba, Francis",
+   "Martinez-Sykora, Antonio",
+   "Tomasi, Claudio",
+   "Zemkoho, Alain"
+  ],
+  "year": "2025",
+  "type": "conferenceObject",
+  "doi": null,
+  "venue": "",
+  "rights": [],
+  "source": "item page"
+ },
+ {
+  "handle": "10446/326826",
+  "title": "Artificial effort",
+  "authors": [
+   "Belotti, Federico",
+   "Coniglio, Stefano",
+   "Cosma, Antonio",
+   "Fallucchi, Francesco Pio"
+  ],
+  "year": "2026",
+  "type": "",
+  "doi": "10.13122/wpeconomics_41",
+  "venue": "Quaderni del Dipartimento di Scienze economiche",
+  "rights": [
+   "info:eu-repo/semantics/openAccess"
+  ],
+  "source": "oai"
+ }
+]
