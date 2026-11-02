@@ -23,10 +23,18 @@ front matter for that reason.
 
 `about.html` redirects to `career.html`.
 
+`nerd.html` is not a tab: "nerd mode", the site as a terminal (`ls`, `cd`, `pwd`, `cat`, `grep`, `tree`, `find`,
+`open`, `help`…), reached from the "›_ nerd mode" button under the sidebar's links. `nerd.js` builds its
+read-only home directory when the page opens, from the pages themselves (one directory per page, one file per
+section label), so it never needs editing when the pages change; a new page needs a line in its `PAGES` list.
+
 ## Other files
 
 - `style.css` — all styling (bump the `?v=` query on every page after editing it)
-- `site.js` — Menu button on small screens
+- `site.js` — Menu button on small screens; the light/dark button (under the sidebar's links). Without a
+  choice the site follows the visitor's system setting; a click stores the choice in `localStorage` (`theme`).
+  The one-line script at the top of every page's `<head>` sets `data-theme` before the page draws.
+- `nerd.js` — nerd mode (`nerd.html`)
 - `images/press/` — press thumbnails (640x400); `files/events/` — event posters and programmes
 - `cv/` — LaTeX sources of the CV; `.github/workflows/build-cv.yml` rebuilds `cv/cv_SC.pdf` on push
 
